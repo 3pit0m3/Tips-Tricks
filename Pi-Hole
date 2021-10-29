@@ -1,0 +1,3 @@
+Single commandd to update Pi-Hole running on Raspberry Pi, with PADD.
+
+sudo mv padd.sh padd.sh.bak && sudo wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh && sudo chmod +x padd.sh && sudo apt update && sudo apt dist-upgrade -y && pihole -up && sudo reboot
