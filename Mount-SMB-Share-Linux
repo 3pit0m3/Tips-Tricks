@@ -1,0 +1,26 @@
+## Steps to permanently mount SMB shares on linux.
+
+## Install CIFS
+sudo apt install cifs-utils
+
+## Create a mount point (directory)
+mkdir ~/chia
+
+## Create credentials file
+nano ~/.creds
+
+### Insert the following lines into this file:
+username=username
+password=password
+
+## Set permissions on the credential file to be readable only by the current user.
+chmod 400 creds
+
+## Modify FSTAB to mount share on boot
+nano /etc/fstab
+
+### Insert the following line. Note that spaces in the below entry are TABS inserts.
+//host/share  /mount/point  cifs  credentials=/location/creds 0 0
+
+## Mount all shares
+sudo mount -a
