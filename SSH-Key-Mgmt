@@ -1,0 +1,12 @@
+## Generate Keys
+ssh-keygen -a <num> -t ed25519 -f ~/.ssh/id_ed25519 -C "Some Text"
+
+## Transfer Keys
+ssh-copy-id user@host -i <key>
+
+## Disable Root SSH Access
+nano /etc/ssh/sshd_config
+## Change the following:
+PasswordAuthentication no
+PermitRootLogin no
+PermitRootLogin prohibit-password
