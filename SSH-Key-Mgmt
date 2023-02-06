@@ -1,5 +1,5 @@
 ## Generate Keys
-ssh-keygen -a <num> -t ed25519 -f ~/.ssh/id_ed25519 -C "Some Text"
+ssh-keygen -a <num> -t ed25519 -f ~/.ssh/id_ed25519 -C "Name of Key"
 
 ## Transfer Keys
 ssh-copy-id user@host -i <key>
