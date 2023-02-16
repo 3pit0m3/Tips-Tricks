@@ -1,0 +1,14 @@
+## Display root filesystem free space
+df -h
+
+## Display logical volume size
+lvdisplay
+
+## Extend logical volume to max size
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+
+## Extend filesystem onto new free space
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+
+## Original content from
+https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
